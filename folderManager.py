@@ -18,16 +18,15 @@ class FolderManager:
             os.system(f'rm -rf {fle}')
     
     def delete_files_except(self, lst):
-        lst1 = [w.split('.')[0] for w in self.files]
-        lst2 = [w.split('.')[0] for w in lst]
+        # lst1 = [w.split('.')[0] for w in self.files]
+        # lst2 = [w.split('.')[0] for w in lst]
 
-        files_to_delete = list(set(lst1) - set(lst2))
-        print(lst1, lst2)
-        print(len(files_to_delete))
-        files_to_delete = [w+".jpg" for w in files_to_delete]
-        print(files_to_delete)
-        # files_to_delete = list(set(self.files) - set(lst))
-        # print(self.files, lst)
+        # files_to_delete = list(set(lst1) - set(lst2))
+        # print(lst1, lst2)
         # print(len(files_to_delete))
+        # files_to_delete = [w+".jpg" for w in files_to_delete]
+        # print(files_to_delete)
+        files_to_delete = list(set(self.files) - set(lst))
+  
         self.delete_files(files_to_delete)
     
